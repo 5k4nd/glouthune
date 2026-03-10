@@ -32,3 +32,9 @@ Additionnel :
     * change the model
     * run ./db_upgrade
     * run ./db_migrate
+
+
+Cron de backup de DB :
+# glouthune backup on courbe.eu
+0 4 * * 6 rsync -av -e "ssh -i path_to_/backup_key"  path/to/mesLucioles.db foo@bar.fr:$(date +\%F)_mesLucioles.db
+
